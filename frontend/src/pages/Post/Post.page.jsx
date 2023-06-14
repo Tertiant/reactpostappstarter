@@ -6,12 +6,11 @@ import { useLoaderData } from "react-router-dom";
 
 export const PostPage = () => {
   const posts = useLoaderData();
-
   return (
     <Container>
       <SimpleGrid cols={3}>
         {posts.map((post) => (
-          <ArticleCardImage key={post.title} {...post} />
+          <ArticleCardImage key={post.title} {...post}/>
         ))}
       </SimpleGrid>
     </Container>

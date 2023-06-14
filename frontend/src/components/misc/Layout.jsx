@@ -1,13 +1,17 @@
 import { Outlet, useLocation } from "react-router-dom";
-import Navbar from "./Navbar";
+import {HeaderSimple} from "./HeaderSimple";
 
-const Layout = () => (
+
+const Layout = () => {
+
+ return ( 
   <div>
-    <Navbar />
+    <HeaderSimple/>
     <main>
       <Outlet />
     </main>
   </div>
-);
+)
+};
 
 export default Layout;

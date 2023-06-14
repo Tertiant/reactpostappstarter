@@ -4,9 +4,14 @@ import { setSession } from "../services/jwt.service";
 
 const createAuthStore = (set, get) => ({
   user: null,
+  email: null,
+  password: null,
   authLoading: false,
   tokenLoading: true,
   setUser: (args) => set({ user: args }),
+  setEmail: (args) => set({email: args}),
+  setPassword: (args) => set({password: args}),
+  clearInputs: () => set({email: null, password: null}),
   logoutService: () => {
     setSession(null);
     set({ user: null, authLoading: false, tokenLoading: false });
