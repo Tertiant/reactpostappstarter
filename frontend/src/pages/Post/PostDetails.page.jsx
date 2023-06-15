@@ -6,10 +6,10 @@ import { createStyles } from '@mantine/core';
 
 const useStyles = createStyles((theme) => ({ 
 postContainer: {
-    width: 50%,
-    height: auto,
-    borderRadius: 6px,
-    boxShadow: 0px 0px 30px rgba(0, 0, 0, 0.25),
+    width: "50%",
+    height: "auto",
+    borderRadius: "6px",
+    boxShadow: "0px 0px 30px rgba(0, 0, 0, 0.25)",
 },
 
 
