@@ -22,8 +22,6 @@ export function AuthenticationTitle() {
             setEmail,
             password,
             setPassword,
-            clearInputs
-    
           } = useBoundStore((state) => state);
 
     const onLogin = async (e) => {
@@ -51,12 +49,12 @@ export function AuthenticationTitle() {
       <Paper withBorder shadow="md" p={30} mt={30} radius="md">
             <TextInput value={email} label="Email" placeholder="you@mantine.dev" required onChange={(e)=>(setEmail(e.target.value))}/>
             <PasswordInput value={password} label="Password" placeholder="Your password" required mt="md" onChange={(e)=>(setPassword(e.target.value))}/>
-            <Group position="apart" mt="lg">
+            {/* <Group position="apart" mt="lg">
             <Checkbox label="Remember me" />
             <Anchor component="button" size="sm">
                 Forgot password?
             </Anchor>
-            </Group>
+            </Group> */}
             <Button fullWidth mt="xl" onClick={onLogin}>
             Sign in
             </Button>

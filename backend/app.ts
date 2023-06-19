@@ -9,6 +9,7 @@ import {
   addPost,
   posts,
   sleep,
+  editPost,
 } from "./fakedb";
 
 const port = 8085;
@@ -43,15 +44,23 @@ app.post("/api/user/validation", (req, res) => {
 });
 
 app.get("/api/posts", async (req, res) => {
-  // Sleep delay goes here
+  sleep(3000);
   res.json(posts);
+});
+
+// Update the database with the edited post
+app.post("/api/posts/edit/:id", (req, res) => {
+  const incomingPost = req.body;
+  console.log('incomingPost: ',req.body);
+  editPost(incomingPost);
+  res.status(200).json({ success: true });
 });
 
 // ⭐️ TODO: Implement this yourself
 app.get("/api/posts/:id", (req, res) => {
-  const id: number = +req.params.id;
+  const id: number = +req.params.id-1;
   // The line below should be fixed.
-  res.json(posts[id]);
+  res.json({...posts[id], email: findUserById(posts[id].userId)});
 });
 
 /**

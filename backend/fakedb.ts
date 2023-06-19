@@ -41,6 +41,20 @@ export const addPost = (post: any) => {
   posts.push(post);
 };
 
+export const editPost = ({id, title, category, content, image}: any) => {
+  const editedPost = {
+    id: id,
+    title: title,
+    category: category,
+    content: content,
+    image: image,
+    userId: posts.find(post => post.id === id)?.userId,
+  };
+  console.log(editedPost);
+  //@ts-ignore
+  posts[posts.findIndex(post => post.id === id)] = editedPost;
+};
+
 export const verifyUser = (email: string, password: string) => {
   const user = users.find((user) => {
     return user.email === email && user.password === password;
@@ -52,7 +66,7 @@ export const verifyUser = (email: string, password: string) => {
 export const findUserById = (id: number) => {
   const user = users.find((user) => user.id === id);
   if (!user) throw new Error("User not found");
-  return user;
+  return user.email;
 };
 
 export const parseToken = (authHeader: string | undefined, res: Response) => {
