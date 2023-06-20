@@ -44,8 +44,7 @@ app.post("/api/user/validation", (req, res) => {
 });
 
 app.get("/api/posts", async (req, res) => {
-  sleep(3000);
-  res.json(posts);
+  await sleep(2000).then(() => res.json(posts));
 });
 
 // Update the database with the edited post
