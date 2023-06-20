@@ -50,8 +50,6 @@ export const PostDetailsPage = () => {
   const { classes, cx } = useStyles();
   const { user } = useBoundStore((state) => state);
   const truncatedEmail = post.email.split('@')[0];
-  console.log(user);
-  console.log(post.email);
 
 
   return (
@@ -64,7 +62,7 @@ export const PostDetailsPage = () => {
           <li><p>{`Posted by ${truncatedEmail}`}</p></li>
           {user === post.email && 
             <Link to={`/posts/edit/${post.id}`}>
-              <Button variant="blue" color="dark">
+              <Button>
                 Edit
               </Button>
             </Link>

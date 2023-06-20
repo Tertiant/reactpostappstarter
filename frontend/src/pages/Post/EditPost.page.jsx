@@ -16,6 +16,9 @@ postContainer: {
   boxShadow: "0px 0px 30px rgba(0, 0, 0, 0.25)",
   display: "flex",
   justifyContent: "space-between",
+},
+
+formFormatted: {
   padding: "64px",
 },
 
@@ -64,7 +67,7 @@ export const EditPostPage = () => {
   return (
     <div className={classes.centeringDiv}>
       <div className={classes.postContainer}>
-        <form onSubmit={form.onSubmit(handleSubmit)}>
+        <form className={classes.formFormatted} onSubmit={form.onSubmit(handleSubmit)}>
           <TextInput
             label="Title"
             placeholder={post.title}
@@ -88,10 +91,15 @@ export const EditPostPage = () => {
             {...form.getInputProps("content")}
           />
 
-          <Group position="right" mt="md">
+          <Group position="left" mt="md">
             <Button type="submit">Update</Button>
           </Group>
         </form>
+        <img 
+          src={post.image}
+          alt={post.content} 
+          className={classes.postImage}  
+        />
       </div>
     </div>
   );

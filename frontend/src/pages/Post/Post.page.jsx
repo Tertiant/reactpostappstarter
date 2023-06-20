@@ -5,10 +5,8 @@ import { SimpleGrid, Container, Loader } from "@mantine/core";
 import { useLoaderData, Await, defer } from "react-router-dom";
 import React from "react";
 
-
 export const PostPage = () => {
   const data = useLoaderData();
-  console.log(data);
 
   return (
     <Container>          

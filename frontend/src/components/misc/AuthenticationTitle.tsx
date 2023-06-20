@@ -28,7 +28,6 @@ export function AuthenticationTitle() {
         e.preventDefault();
         if (!email || !password) return;
         loginService(email, password);
-        // clearInputs();
       };
 
   return (

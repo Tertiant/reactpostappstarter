@@ -50,7 +50,6 @@ app.get("/api/posts", async (req, res) => {
 // Update the database with the edited post
 app.post("/api/posts/edit/:id", (req, res) => {
   const incomingPost = req.body;
-  console.log('incomingPost: ',req.body);
   editPost(incomingPost);
   res.status(200).json({ success: true });
 });
